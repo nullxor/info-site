@@ -18,6 +18,9 @@ class App extends Component {
 
   onItemClick = (show) => {
     this.setState({ show });
+    if (show === 'tetris') {
+      this.refs.frame.contentWindow.location.reload();
+    }
   }
 
   closeDialog = () => {
@@ -82,7 +85,7 @@ class App extends Component {
             </ul>
           </MsgBox>
           <div hidden={this.state.show !== 'tetris'}>
-            <iframe title="Tetris" src="tetris/index.html" frameBorder="0"></iframe>
+            <iframe ref="frame" title="Tetris" src="tetris/index.html" frameBorder="0"></iframe>
           </div>
         </div>
       </div>
