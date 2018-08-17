@@ -1,0 +1,11 @@
+li.menu-popup-item {
+  list-style-type: none;
+}
+
+li.menu-popup-item:hover {
+  background-color: #00a800;
+}
+
+.red {
+  color: #af0000;
+}

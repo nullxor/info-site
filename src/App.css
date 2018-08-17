@@ -1,0 +1,8 @@
+.flex {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.list {
+  margin: 1% 0% 0% 5%;
+}

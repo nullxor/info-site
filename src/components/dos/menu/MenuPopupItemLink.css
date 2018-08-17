@@ -1,0 +1,23 @@
+li.menu-popup-item {
+  list-style-type: none;
+  overflow: hidden;
+}
+
+li.menu-popup-item:hover {
+  background-color: #00a800;
+}
+
+.red {
+  color: #af0000;
+}
+
+.menu-popup-item a {
+  color: #333;
+  text-decoration: none;
+  padding-right: 100%;
+}
+
+.menu-popup-item a:hover {
+  color: #333;
+  text-decoration: none;
+}

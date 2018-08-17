@@ -1,0 +1,9 @@
+.menu {
+  background: rgb(185, 178, 185);
+  color: #333;
+  font-size: 1.3em;
+  height: 25px;
+  overflow: hidden;
+  padding: 1px;
+  width: 100%;
+}
