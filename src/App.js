@@ -6,6 +6,7 @@ import MenuPopupItem from './components/dos/menu/MenuPopupItem';
 import MenuPopupItemLink from './components/dos/menu/MenuPopupItemLink';
 import './App.css';
 import MsgBox from './components/dos/msgbox/MsgBox';
+import Clock from './components/dos/clock/Clock';
 
 class App extends Component {
   constructor(props) {
@@ -27,6 +28,14 @@ class App extends Component {
     return (
       <div>
         <Menu>
+          <MenuItem icon="fa fa-bars">
+          <MenuPopup>
+              <MenuPopupItem label="New" />
+              <MenuPopupItem label="Save" />
+              <MenuPopupItem label="Exit" />
+            </MenuPopup>
+
+          </MenuItem>
           <MenuItem label="File">
             <MenuPopup>
               <MenuPopupItem label="New" />
@@ -46,6 +55,9 @@ class App extends Component {
               <MenuPopupItemLink label="LinkedIn" link="https://www.linkedin.com/in/olfran/" icon="fa-linkedin" />
               <MenuPopupItemLink label="Twitter" link="https://twitter.com/nullxor" icon="fa-twitter" />
             </MenuPopup>
+          </MenuItem>
+          <MenuItem placeholder="true">
+            <Clock />
           </MenuItem>
         </Menu>
         <div className="box flex">

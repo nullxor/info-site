@@ -29,3 +29,13 @@ button, button:active, button:focus {
   font-family: 'VT323';
   font-size: 15pt;
 }
+
+.icon {
+  font-size: .8em;
+}
+
+.placeholder {
+  float: right;
+  margin-right: 1%;
+  list-style-type: none;
+}
