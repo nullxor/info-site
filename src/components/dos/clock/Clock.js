@@ -23,6 +23,10 @@ export default class Clock extends React.Component {
     });
   }
 
+  prefixZero(number) {
+    return number < 10 ? `0${number}` : number;
+  }
+
   componentWillMount() {
     this.intervalId = setInterval(this.updateTime, 1000);
   }
@@ -34,7 +38,7 @@ export default class Clock extends React.Component {
   render() {
     return (
       <span>
-        {`${this.state.hour}:${this.state.minutes}:${this.state.seconds < 10 ? '0' : ''}${this.state.seconds} ${this.state.ampm}`}
+        {`${this.state.hour}:${this.prefixZero(this.state.minutes)}:${this.prefixZero(this.state.seconds)} ${this.state.ampm}`}
       </span>
     );
   }
