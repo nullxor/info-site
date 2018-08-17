@@ -35,6 +35,7 @@ button, button:active, button:focus {
 }
 
 .placeholder {
+  cursor: default;
   float: right;
   margin-right: 1%;
   list-style-type: none;

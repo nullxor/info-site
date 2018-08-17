@@ -19,7 +19,7 @@ export default class Clock extends React.Component {
       hour: date.getHours(),
       minutes: date.getMinutes(),
       seconds: date.getSeconds(),
-      ampm: date.getHours() > 0 && date.getHours() < 13 ? 'AM' : 'PM'
+      ampm: date.getHours() >= 0 && date.getHours() < 13 ? 'AM' : 'PM'
     });
   }
 
@@ -38,7 +38,7 @@ export default class Clock extends React.Component {
   render() {
     return (
       <span>
-        {`${this.state.hour}:${this.prefixZero(this.state.minutes)}:${this.prefixZero(this.state.seconds)} ${this.state.ampm}`}
+        {`${this.prefixZero(this.state.hour)}:${this.prefixZero(this.state.minutes)}:${this.prefixZero(this.state.seconds)} ${this.state.ampm}`}
       </span>
     );
   }

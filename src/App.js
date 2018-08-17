@@ -29,21 +29,11 @@ class App extends Component {
       <div>
         <Menu>
           <MenuItem icon="fa fa-bars">
-          <MenuPopup>
-              <MenuPopupItem label="New" />
-              <MenuPopupItem label="Save" />
-              <MenuPopupItem label="Exit" />
+            <MenuPopup>
+              <MenuPopupItem id="tetris" label="Play Tetris" onItemClick={this.onItemClick} />
             </MenuPopup>
-
           </MenuItem>
           <MenuItem label="File">
-            <MenuPopup>
-              <MenuPopupItem label="New" />
-              <MenuPopupItem label="Save" />
-              <MenuPopupItem label="Exit" />
-            </MenuPopup>
-          </MenuItem>
-          <MenuItem label="About">
             <MenuPopup>
               <MenuPopupItem id="about" label="About Me" onItemClick={this.onItemClick} />
               <MenuPopupItem id="side" label="Side projects" onItemClick={this.onItemClick} />
@@ -65,7 +55,7 @@ class App extends Component {
             I'm just a normal guy, another Software Engineer trying to learn new things everyday and more importantly trying to having fun.
             The first programming language that I learnt was C in 2005, even though there was a lot of modern IDEs
             at that time, for some weird reason we used Borland Turbo C at college, so I tried to mimic that style
-            with this page. There is another template if you don't like this one <a href="">check it out</a>.
+            with this page. It probably won't work well on mobile devices. Also this page is just for fun, so it won't follow the best practices.
             <p className="box">
               I'm always reinventing the wheel because I think it's the best way to learn, for real
               projects I always (almost) try to use some Framework, but I'm not a '(Put Here your Framework) Developer'  I like to learn things
@@ -73,13 +63,13 @@ class App extends Component {
             </p>
             <p className="box">
               By the way, as you might be noticed already, I'm not a native english speaker, so feel free correct me or (much better)
-              <a href="https://github.com/nullxor" target="_blank">send me a Pull Request</a> for any typo.
+              <a href="https://github.com/nullxor" target="_blank" rel="noopener noreferrer">send me a Pull Request</a> for any typo.
             </p>
           </MsgBox>
           <MsgBox title="side projects" visible={this.state.show === 'side'} onButtonClick={this.closeDialog}>
             Some of the stuff that I'm planning to work on (No particular order). Maybe you'd want to work on it too :)
             <ul className="list">
-              <li><a href="https://github.com/nullxor/tetris-js/" target="_blank">Tetris game</a></li>
+              <li><a href="https://github.com/nullxor/tetris-js/" target="_blank" rel="noopener noreferrer">Tetris game</a></li>
               <li>Snake game (Probably with vanilla JavaScript ES6/ES7)</li>
               <li>Tiny bootloader or a tiny Pet Operating System (in C or maybe ASM)</li>
               <li>Image to ASCII converter</li>
@@ -91,6 +81,9 @@ class App extends Component {
               <li>Some kind of IA to play the previous games that I build, Snake or Tetris, maybe a Neural Network (I have to learn a lot about this)</li>
             </ul>
           </MsgBox>
+          <div hidden={this.state.show !== 'tetris'}>
+            <iframe title="Tetris" src="tetris/index.html" frameBorder="0"></iframe>
+          </div>
         </div>
       </div>
     );
