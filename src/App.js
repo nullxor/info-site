@@ -77,7 +77,7 @@ class App extends Component {
               </p>
               <p className="box">
                 By the way, as you might be noticed already, I'm not a native english speaker, so feel free correct me or (much better)
-                <a href="https://github.com/nullxor" target="_blank" rel="noopener noreferrer">send me a Pull Request</a> for any typo.
+                <a href="https://github.com/nullxor/info-site" target="_blank" rel="noopener noreferrer">send me a Pull Request</a> for any typo.
               </p>
             </MsgBox>
             <MsgBox title="side projects" visible={this.state.show === 'side'} onButtonClick={this.closeDialog}>
