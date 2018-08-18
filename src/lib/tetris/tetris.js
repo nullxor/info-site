@@ -1,3 +1,6 @@
+import  Tetromino from './tetromino';
+import  defaultConfig from './config';
+
 const COLLISION_TYPE = {
   LEFT: 1,
   RIGHT: 2,
@@ -5,7 +8,7 @@ const COLLISION_TYPE = {
   OTHER: 4   
 };
 
-class Tetris {
+export default class Tetris {
   constructor(drawer, field, window = window, config = defaultConfig) {
     // Events
     this.onUpdateScore = () => {};
@@ -28,6 +31,7 @@ class Tetris {
    * Starts the game
    */
   start() {
+    this.score = this.elapsedSeconds = 0;
     this.drawer.grid(this.config.rows, this.config.columns, this.config.blankColor, this.config.borderColor);
     this.setRandomTetromino();
     this.drawer.drawTetromino(this.currentTetromino);

@@ -12,7 +12,7 @@ export default class MsgBox extends Component {
   render() {
     return (
     <Window title={this.props.title} visible={this.props.visible}>
-      <div className="text-justify">
+      <div className="main text-justify">
         {this.props.children}
       </div>
       <div className="text-center bottom-button">

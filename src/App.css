@@ -1,15 +1,20 @@
 .flex {
-  align-items: center;
-  justify-content: center;
   display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
 }
 
 .list {
   margin: 1% 0% 0% 5%;
 }
 
-iframe {
-  height: 410px;
-  overflow: hidden;
-  width: 428px;
+.tetris {
+  width: 200px;
 }
+
+.dialog {
+  width: 50%;
+}
+
