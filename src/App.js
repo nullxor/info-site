@@ -62,14 +62,14 @@ class App extends Component {
             <Clock />
           </MenuItem>
         </Menu>
-        <div className="flex box" style={{height: '94%'}}>
+        <div className="flex box">
           <div className="dialog">
             <MsgBox title="about" visible={this.state.show === 'about'} onButtonClick={this.closeDialog}>
-              I'm just a normal guy, another Software Engineer learning new things and trying to have
-              fun at the same time, I think that is very important because you won't get bored if you enjoy what you're doing.
-              The first programming language that I learnt was C in 2005, even though there was a lot of modern IDEs
-              at that time, for some weird reason we used Borland Turbo C at college, so I tried to mimic that style
-              with this page. It probably won't work well on mobile devices.
+              I'm just another Software Engineer learning new things and trying to have
+              fun at the same time, you won't get bored if you enjoy what you're doing.
+              The first programming language that I learnt was C, even though there was a lot of modern IDEs, 
+              for some weird reason we used Borland Turbo C at college, so I tried to mimic that style
+              with this page. It probably won't work well on mobile devices though.
               <p className="box">
                 I'm always reinventing the wheel because I think it's the best way to learn, for real
                 projects I always (almost) try to use some Framework, but I'm not a '(Put Here your Framework) Developer'  I like to learn things
@@ -89,7 +89,7 @@ class App extends Component {
                 <li>Image to ASCII converter</li>
                 <li>Any simple progamming language with a compiler or transpiler (Probably will compile to WASM)</li>
                 <li>A template engine (Likely to be in Golang)</li>
-                <li>Build an emulator (MIPS or Atari emulator, I'll use Golang or C# for this)</li>
+                <li>Build an emulator (MIPS or Atari 2600 emulator, I'll use Golang or C# for this)</li>
                 <li>Try to code a basic ACID Database with simple SQL Support (Probably in JavaScript or maybe C# or Golang)</li>
                 <li>Anything related to blockchain (I have to learn a lot about this)</li>
                 <li>Some kind of IA to play the previous games that I build, Snake or Tetris, maybe a Neural Network (I have to learn a lot about this)</li>
