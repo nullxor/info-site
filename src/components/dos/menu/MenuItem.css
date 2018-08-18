@@ -22,10 +22,13 @@ li.menu-item:hover {
   display: none;
 }
 
-button, button:active, button:focus {
-  background: none;
-  border: none;
-  padding: 1%;
-  font-family: 'VT323';
-  font-size: 15pt;
+.icon {
+  font-size: .8em;
+}
+
+.placeholder {
+  cursor: default;
+  float: right;
+  margin-right: 1%;
+  list-style-type: none;
 }

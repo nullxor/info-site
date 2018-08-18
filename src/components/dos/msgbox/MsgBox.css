@@ -11,5 +11,9 @@
 }
 
 .box {
-  margin-top: 2%;
+  margin-top: 1%;
+}
+
+.main {
+  overflow: hidden;
 }
