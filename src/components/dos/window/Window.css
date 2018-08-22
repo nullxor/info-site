@@ -1,6 +1,7 @@
 
 .window {
   background-color: rgb(185, 178, 185);
+  border: 2px solid #fff;
   box-shadow: 15px 15px 0px rgba(10, 10, 5, .8);
   overflow: hidden;
 }
@@ -18,25 +19,14 @@
 }
 
 .window-title {
+  background: rgb(185, 178, 185);
+  border-bottom: 2px solid #fff;
   color: #fff;
+  cursor: default;
   font-size: 1.2em;
   text-align: center;
-  background: rgb(185, 178, 185);
-  cursor: default;
   text-transform: uppercase;
   padding: 0px 10px 0px 10px;
-}
-
-.window-border1 {
-  border: 2px solid #fff;
-  border-width: 2px 1px 2px 1px;
-  overflow: hidden;
-}
-
-.window-border2 {
-  border: 2px solid #fff;
-  border-width: 2px 2px 1px 2px;
-  overflow: hidden;
 }
 
 .window-wrap {
