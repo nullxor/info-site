@@ -65,18 +65,18 @@ class App extends Component {
         <div className="flex box">
           <div className="dialog">
             <MsgBox title="about" visible={this.state.show === 'about'} onButtonClick={this.closeDialog}>
-              I'm just another Software Engineer learning new things and trying to have
-              fun at the same time, you won't get bored if you enjoy what you're doing.
-              The first programming language that I learnt was C, even though there was a lot of modern IDEs, 
-              for some weird reason we used Borland Turbo C at college, so I tried to mimic that style
-              with this page. It probably won't work well on mobile devices though.
+              Just another Dev learning new things and trying to have fun, you won't get bored 
+              if you enjoy what you're doing, right?. About this weird design: the first programming language that I learnt was C,
+              even though there was a lot of modern IDEs, for some weird reason we used Borland Turbo C at college,
+              so I tried to mimic that style with this page.
               <p className="box">
-                I'm always reinventing the wheel because I think it's the best way to learn, for real
-                projects I always (almost) try to use some Framework, but I'm not a '(Put Here your Framework) Developer'  I like to learn things
-                from the ground up, I like to build things from scratch, especially if it's something that I haven't done before or I don't know how to do it.
+                I'm always reinventing the wheel because I think it's the best way to learn, in real
+                projects I usually (almost) try to use some Framework, but I'm not a '(Put Here your Framework) Developer'  I like to learn things
+                from the ground up, I like to build things from scratch, especially if it's something that I haven't done before or I don't know how to do it, 
+                because I think this is the best way to learn.
               </p>
               <p className="box">
-                By the way, as you might be noticed already, I'm not a native english speaker, so feel free correct me or (much better)
+                Feel free to 
                 <a href="https://github.com/nullxor/info-site" target="_blank" rel="noopener noreferrer">send me a Pull Request</a> for any typo.
               </p>
             </MsgBox>
