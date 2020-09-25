@@ -52,6 +52,9 @@ class App extends Component {
             </MenuPopup>
           </MenuItem>
           <MenuItem label="Social">
+          <MenuPopup>
+            <h1>Hello!</h1>
+          </MenuPopup>
             <MenuPopup>
               <MenuPopupItemLink label="Github" link="https://github.com/nullxor" icon="fa-github" />
               <MenuPopupItemLink label="LinkedIn" link="https://www.linkedin.com/in/olfran/" icon="fa-linkedin" />

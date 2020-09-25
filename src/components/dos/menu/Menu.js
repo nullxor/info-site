@@ -1,20 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Menu.css';
 
-export default class Menu extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      pushed: false
-    }
-  }
-
-  render() {
-    return (
-      <ul className="menu" role="menu">
-        {this.props.children}
-      </ul>
-    );  
-  }
+export default function Menu(props) {
+  return (
+    <ul className="menu" role="menu">
+      {props.children}
+    </ul>
+  );  
 }
