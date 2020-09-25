@@ -9,6 +9,7 @@ import Clock from './components/dos/clock/Clock';
 import TetrisBuilder from './lib/tetris/tetrisbuilder';
 import tetrisConfig from './lib/tetris/config';
 import './App.css';
+import Tetris from './components/tetris/Tetris';
 
 class App extends Component {
   constructor(props) {
@@ -52,9 +53,6 @@ class App extends Component {
             </MenuPopup>
           </MenuItem>
           <MenuItem label="Social">
-          <MenuPopup>
-            <h1>Hello!</h1>
-          </MenuPopup>
             <MenuPopup>
               <MenuPopupItemLink label="Github" link="https://github.com/nullxor" icon="fa-github" />
               <MenuPopupItemLink label="LinkedIn" link="https://www.linkedin.com/in/olfran/" icon="fa-linkedin" />
@@ -98,10 +96,7 @@ class App extends Component {
                 <li>Some kind of IA to play the previous games that I build, Snake or Tetris, maybe a Neural Network (I have to learn a lot about this)</li>
               </ul>
             </MsgBox>
-          </div>
-          <div className="tetris">
             <MsgBox title="tetris" visible={this.state.show === 'tetris'} onButtonClick={this.closeDialog}>
-                <div ref="tetris" hidden={this.state.show !== 'tetris'}></div>
             </MsgBox>
           </div>
         </div>
