@@ -1,32 +1,16 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './Button.css';
 
-export default class Button extends Component {
+export default function Button(props) {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      pushed: false
-    }
-  }
+  const [pushed, setPushed] = useState(false);
 
-  onMouseDown = () => {
-    this.setState({ pushed: true });
-  }
+  const onMouseDown = () => setPushed(true);
+  const onMouseUp = () => setPushed(false);
 
-  onMouseUp = () => {
-    this.setState({ pushed: false });
-  }
-
-  render() {
-    return (
-      <span onClick={this.props.onClick} onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp} onMouseOut={this.onMouseUp} className={`button ${this.state.pushed ? 'pushed' : ''}`}>
-        <span className="label">{this.props.label}</span>  
-      </span>
-    );  
-  }
+  return (
+    <span onClick={props.onClick} onMouseDown={onMouseDown} onMouseUp={onMouseUp} onMouseOut={onMouseUp} className={`button ${pushed ? 'pushed' : ''}`}>
+      <span className="label">{props.label}</span>  
+    </span>
+  );  
 }
-
-Button.defaultProps = {
-  onClick: () => {}
-};
