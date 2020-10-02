@@ -1,6 +1,6 @@
 
 .window {
-  background-color: rgb(185, 178, 185);
+  background-color: #aaa;
   border: 2px solid #fff;
   box-shadow: 15px 15px 0px rgba(10, 10, 5, .8);
   overflow: hidden;

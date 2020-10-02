@@ -1,22 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './MsgBox.css';
 import Window from '../window/Window';
 import Button from '../button/Button';
 
 export default function MsgBox(props) {
-  const [visible, setVisible] = useState(props.visible);
-  
-  const buttonClick = () => setVisible(false);
-
-  console.log(visible && props.visible);
-
-  return props.visible && (
-    <Window title={props.title} visible={visible}>
+  return (
+    <Window title={props.title}>
       <div className="main text-justify">
         {props.children}
       </div>
       <div className="text-center bottom-button">
-        <Button label={props.buttonLabel} onClick={buttonClick}/>
+        <Button label={props.buttonLabel} onClick={props.onButtonClick}/>
       </div>
     </Window>
   );
@@ -24,7 +18,6 @@ export default function MsgBox(props) {
 
 MsgBox.defaultProps = {
   title: '',
-  visible: true,
   buttonLabel: 'OK',
   onButtonClick: () => {},
 }

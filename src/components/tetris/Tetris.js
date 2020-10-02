@@ -4,11 +4,10 @@ import tetrisConfig from '../../lib/tetris/config';
 import './Tetris.css';
 
 export default function Tetris() {
-  alert('Mardito');
   const tetrisRef = useRef();
   useEffect(() => {
     console.log(tetrisRef.current);
-    const tetris = new TetrisBuilder(document.getElementById('tetris'), tetrisConfig);
+    const tetris = new TetrisBuilder(tetrisRef.current, tetrisConfig);
     tetris.newGame();
     return function destroyTetris() {
       tetris.destroyGame();
@@ -17,7 +16,7 @@ export default function Tetris() {
 
   return (
     <div className="tetris">
-      <div id="tetris" ref={tetrisRef}></div>
+      <div ref={tetrisRef}></div>
     </div>
   );
 }
