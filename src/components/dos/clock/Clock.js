@@ -24,7 +24,7 @@ export default function Clock(props) {
     return function clearTimer() {
       clearInterval(intervalId);
     };
-  });
+  }, []);
 
   return (
     <span>
