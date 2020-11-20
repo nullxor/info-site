@@ -10,7 +10,7 @@ import ProjectsDialog from './components/dialogs/ProjectsDialog';
 import TetrisDialog from './components/dialogs/TetrisDialog';
 import './App.css';
 
-function App(props) {
+function App() {
   const [currentDialog, setCurrentDialog] = useState('about');
 
   const closeDialog = () => setCurrentDialog('');
