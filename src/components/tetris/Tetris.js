@@ -6,7 +6,6 @@ import './Tetris.css';
 export default function Tetris() {
   const tetrisRef = useRef();
   useEffect(() => {
-    console.log(tetrisRef.current);
     const tetris = new TetrisBuilder(tetrisRef.current, tetrisConfig);
     tetris.newGame();
     return function destroyTetris() {
