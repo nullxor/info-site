@@ -1,20 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './MenuPopupItemLink.css';
 
-export default class MenuPopupItemLink extends Component {
-  onClick = () => {
-    if (this.props.onItemClick) {
-      this.props.onItemClick(this.props.id);
+export default function MenuPopupItemLink(props) {
+  const onClick = () => {
+    if (props.onItemClick) {
+      props.onItemClick(props.id);
     }
   }
 
-  render() {
-    return (
-      <li className="menu-popup-item" onClick={this.onClick}>
-        <a href={this.props.link} target="_blank" rel="noopener noreferrer"><i className={`fa ${this.props.icon}`}></i><span className="red"> {this.props.label[0]}</span>{this.props.label.substring(1)}</a>
-      </li>
-    );  
-  }
+  return (
+    <li className="menu-popup-item" onClick={onClick}>
+      <a href={props.link} target="_blank" rel="noopener noreferrer">
+        <i className={`fa ${props.icon}`}></i>
+        <span className="red"> {props.label[0]}</span>{props.label.substring(1)}
+      </a>
+    </li>
+  );  
 }
 
 MenuPopupItemLink.defaultProps = {
