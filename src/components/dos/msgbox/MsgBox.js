@@ -5,7 +5,7 @@ import Button from '../button/Button';
 
 export default function MsgBox(props) {
   return (
-    <Window title={props.title}>
+    <Window title={props.title} width={props.width}>
       <div className="main text-justify">
         {props.children}
       </div>
