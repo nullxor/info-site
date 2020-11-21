@@ -1,9 +1,28 @@
-
 .window {
-  background-color: rgb(185, 178, 185);
-  border: 2px solid #fff;
+  background-color: #aaa;
   box-shadow: 15px 15px 0px rgba(10, 10, 5, .8);
+  padding: 5px 2px 10px 2px;
+  padding: 0.5%;
   overflow: hidden;
+  position: absolute;
+}
+
+.window.dragging {
+  box-shadow: none;
+  border: 3px solid #00aa00;
+  cursor: e-resize;
+}
+
+.window.dragging .border {
+  border: none;
+}
+
+.border {
+  border: 2px solid #fff;
+  border-left: 3px solid #fff;
+  border-right: 3px solid #fff;
+  padding: 5px 0px 5px 0px;
+  z-index: -1;
 }
 
 @media only screen and (max-width: 600px) {
@@ -13,25 +32,33 @@
     width: 100%;
   }
 
-  .window-wrap {
+  .window-body {
     padding: 3% !important;
   }
 }
 
 .window-title {
-  background: rgb(185, 178, 185);
-  border-bottom: 2px solid #fff;
+  background: transparent;
   color: #fff;
   cursor: default;
-  font-size: 1.2em;
+  font-size: 1.4em;
   text-align: center;
-  text-transform: uppercase;
+  text-transform: capitalize;
   padding: 0px 10px 0px 10px;
+  position: relative;
+  top: -16px;
+  z-index: 1100;
+  cursor: move;
 }
 
-.window-wrap {
+.title {
+  background: #aaa;
+  padding: 0px 10px;
+}
+
+.window-body {
   cursor: default;
   color: #111;
   font-size: 1.2em;
-  padding: 3%;
+  padding: 0% 1%;
 }

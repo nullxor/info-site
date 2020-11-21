@@ -123,7 +123,7 @@ const TETROMINO_J =
   ],  
 ];
 
-export default {
+const config = {
   // Block size in pixels
   blockSize: 15,
   
@@ -157,3 +157,5 @@ export default {
   ],
   tetrominoesColor: ['#d11', '#1d1', '#11f', '#dd1', '#d1d', '#1cd', '#fdd']
 }
+
+export default config;

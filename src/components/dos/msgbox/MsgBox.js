@@ -1,31 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './MsgBox.css';
 import Window from '../window/Window';
 import Button from '../button/Button';
 
-export default class MsgBox extends Component {
-
-  buttonClick = () => {
-    this.props.onButtonClick();
-  }
-
-  render() {
-    return (
-    <Window title={this.props.title} visible={this.props.visible}>
+export default function MsgBox(props) {
+  return (
+    <Window title={props.title} width={props.width}>
       <div className="main text-justify">
-        {this.props.children}
+        {props.children}
       </div>
       <div className="text-center bottom-button">
-        <Button label={this.props.buttonLabel} onClick={this.buttonClick}/>
+        <Button label={props.buttonLabel} onClick={props.onButtonClick}/>
       </div>
     </Window>
-    );
-  }
+  );
 }
 
 MsgBox.defaultProps = {
   title: '',
-  visible: true,
   buttonLabel: 'OK',
   onButtonClick: () => {},
 }

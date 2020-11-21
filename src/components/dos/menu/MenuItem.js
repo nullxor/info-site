@@ -1,42 +1,31 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './MenuItem.css';
 
-export default class MenuItem extends Component {
+export default function MenuItem(props) {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      popupVisible: false
+  const [popupVisible, setPopupVisible] = useState(false);
+
+  const onClick = () => {
+    if (props.onClick) {
+      props.onClick(props.id);
     }
+    setPopupVisible(!popupVisible);
   }
 
-  onClick = () => {
-    if (this.props.onClick) {
-      this.props.onClick(this.props.id);
-    }
-    this.setState((oldState) => ({
-      popupVisible: !oldState.popupVisible
-    }));
-  }
+  const onBlur = () => setPopupVisible(false);
 
-  onBlur = () => {
-    this.setState({popupVisible: false});
-  }
-
-  render() {
-    const item = (
-      <li onMouseOver={this.onClick} onMouseOut={this.onBlur} className={`menu-item ${this.state.popupVisible ? 'menu-item-active' : ''}`}>
-        <span><i className={this.props.icon ? `icon fa ${this.props.icon}` : ''}></i><span className="red">{this.props.label[0]}</span>{this.props.label.substring(1)}</span>
-        <span onClick={this.onBlur} className={`${this.state.popupVisible ? '' : 'hidden'}`}>{this.props.children}</span>
-      </li>
-    );
-    const placeholder = (
-      <li className="placeholder">
-        {this.props.children}
-      </li>
-    );
-    return this.props.placeholder ? placeholder : item;
-  }
+  const item = (
+    <li onMouseOver={onClick} onMouseOut={onBlur} className={`menu-item ${popupVisible ? 'menu-item-active' : ''}`}>
+      <span><i className={props.icon ? `icon fa ${props.icon}` : ''}></i><span className="red">{props.label[0]}</span>{props.label.substring(1)}</span>
+      <span onClick={onBlur} className={`${popupVisible ? '' : 'hidden'}`}>{props.children}</span>
+    </li>
+  );
+  const placeholder = (
+    <li className="placeholder">
+      {props.children}
+    </li>
+  );
+  return props.placeholder ? placeholder : item;
 }
 
 MenuItem.defaultProps = {
