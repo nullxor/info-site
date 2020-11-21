@@ -51,11 +51,7 @@ function App() {
           <Clock />
         </MenuItem>
       </Menu>
-      <div className="flex box">
-        <div className="dialog">
-          {getCurrentDialog(currentDialog)}
-        </div>
-      </div>
+      {getCurrentDialog(currentDialog)}
     </div>
   );
 }

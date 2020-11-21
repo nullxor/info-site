@@ -5,7 +5,6 @@ import MsgBox from '../dos/msgbox/MsgBox';
 export default function AboutDialog(props) {
   return (
     <MsgBox title="about" onButtonClick={props.onButtonClick}>
-    Just another Dev learning new things and having fun at the same time.
     <p className="box">
       I'm always reinventing the wheel because I think it's the best way to learn, in real
       projects I usually (almost) try to use some Framework, but I'm not a '(Put Here your Framework) Developer' I like to learn

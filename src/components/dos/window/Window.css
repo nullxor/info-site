@@ -1,4 +1,3 @@
-
 .window {
   background-color: #aaa;
   box-shadow: 15px 15px 0px rgba(10, 10, 5, .8);
@@ -7,6 +6,16 @@
   overflow: hidden;
   position: absolute;
   width: 50%;
+}
+
+.window.dragging {
+  box-shadow: none;
+  border: 3px solid #00aa00;
+  cursor: e-resize;
+}
+
+.window.dragging .border {
+  border: none;
 }
 
 .border {
@@ -40,6 +49,7 @@
   position: relative;
   top: -16px;
   z-index: 1100;
+  cursor: move;
 }
 
 .title {
