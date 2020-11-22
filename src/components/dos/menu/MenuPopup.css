@@ -5,8 +5,7 @@ ul.menu-popup {
   padding: 10px;
   position: absolute;
   width: 180px;
-  z-index: 100;
-
+  z-index: 2000;
 }
 
 div.menu-popup-container {

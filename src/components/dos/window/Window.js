@@ -43,8 +43,16 @@ export default function Window(props) {
     setDragInfo(false);
   }
 
+  function getStyle() {
+    const style = { top: pos.y, left: pos.x };
+    if (props.width) {
+      style.width = props.width;
+    }
+    return style;
+  }
+
   return (
-    <div className={dragInfo ? 'window dragging' : 'window'} ref={windowRef} style={{top: pos.y, left: pos.x, width: `${props.width}`}}>
+    <div className={dragInfo ? 'window dragging' : 'window'} ref={windowRef} style={getStyle()}>
       <div className="border">
         <div className="window-title" onMouseDown={onMouseDown} onMouseUp={onMouseUp}>
           <span className="title">{props.title}</span>
@@ -58,6 +66,5 @@ export default function Window(props) {
 }
 
 Window.defaultProps = {
-  title: '',
-  width: '50%'
+  title: ''
 }

@@ -11,7 +11,7 @@ import TetrisDialog from './components/dialogs/TetrisDialog';
 import './App.css';
 
 function App() {
-  const [currentDialog, setCurrentDialog] = useState('');
+  const [currentDialog, setCurrentDialog] = useState('tetris');
 
   const closeDialog = () => setCurrentDialog('');
 

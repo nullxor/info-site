@@ -1,7 +1,7 @@
 import React from 'react';
-import './MsgBox.css';
 import Window from '../window/Window';
 import Button from '../button/Button';
+import './MsgBox.css';
 
 export default function MsgBox(props) {
   return (
