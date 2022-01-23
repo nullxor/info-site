@@ -1,43 +1,30 @@
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
 import Menu from  './components/dos/menu/Menu';
 import MenuItem from './components/dos/menu/MenuItem';
 import MenuPopup from './components/dos/menu/MenuPopup';
 import MenuPopupItem from './components/dos/menu/MenuPopupItem';
 import MenuPopupItemLink from './components/dos/menu/MenuPopupItemLink';
 import Clock from './components/dos/clock/Clock';
-import AboutDialog from './components/dialogs/AboutDialog';
-import ProjectsDialog from './components/dialogs/ProjectsDialog';
-import TetrisDialog from './components/dialogs/TetrisDialog';
+import Dialogs from './components/dialogs/Dialogs';
+import dialogReducer from './state/reducers/dialogReducer';
+import { openDialog, closeDialog } from './state/actions/dialogActions';
 import './App.css';
 
 function App() {
-  const [currentDialog, setCurrentDialog] = useState('');
-
-  const closeDialog = () => setCurrentDialog('');
-
-  const getCurrentDialog = (id) =>  {
-    if (id === 'about') {
-      return <AboutDialog onButtonClick={closeDialog} />;
-    } else if (id === 'projects') {
-      return <ProjectsDialog onButtonClick={closeDialog} />;
-    } else if (id === 'tetris') {
-      return <TetrisDialog onButtonClick={closeDialog} />;
-    }
-    return null;
-  }
+  const [currentDialog, dispachDialog] = useReducer(dialogReducer, null);
 
   return (
     <div className="fh">
       <Menu>
         <MenuItem icon="fa fa-bars">
           <MenuPopup>
-            <MenuPopupItem id="tetris" label="Play Tetris" onItemClick={() => setCurrentDialog('tetris')} />
+            <MenuPopupItem id="tetris" label="Play Tetris" onItemClick={() => dispachDialog(openDialog('tetris'))} />
           </MenuPopup>
         </MenuItem>
         <MenuItem label="File">
           <MenuPopup>
-            <MenuPopupItem id="about" label="About Me" onItemClick={() => setCurrentDialog('about')} />
-            <MenuPopupItem id="projects" label="Side projects" onItemClick={() => setCurrentDialog('projects')} />
+            <MenuPopupItem id="about" label="About Me" onItemClick={() => dispachDialog(openDialog('about'))} />
+            <MenuPopupItem id="projects" label="Side projects" onItemClick={() => dispachDialog(openDialog('projects'))} />
           </MenuPopup>
         </MenuItem>
         <MenuItem label="Social">
@@ -51,7 +38,7 @@ function App() {
           <Clock />
         </MenuItem>
       </Menu>
-      {getCurrentDialog(currentDialog)}
+      <Dialogs currentDialog={currentDialog} onCloseCurrentDialog={() => dispachDialog(closeDialog())} />
     </div>
   );
 }
