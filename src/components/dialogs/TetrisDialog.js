@@ -4,12 +4,12 @@ import Tetris from '../tetris/Tetris';
 
 
 export default function TetrisDialog(props) {
-  console.log('Rendering Tetris');
   return (
+    props.show &&
     <div className="tetris">
-    <MsgBox title="tetris" onButtonClick={props.onButtonClick} width="220px">
-      <Tetris></Tetris>
-    </MsgBox>
-  </div>
+      <MsgBox title="tetris" onButtonClick={props.onButtonClick} width="220px">
+        <Tetris></Tetris>
+      </MsgBox>
+    </div>
   );
 }
