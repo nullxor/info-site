@@ -17,7 +17,7 @@ export default function ProjectsDialog(props) {
         <li>Build an emulator (MIPS or Atari 2600 emulator, I'll use Golang or C#)</li>
         <li>Try to code a basic ACID Database with simple SQL Support (Probably in JavaScript or maybe C# or Golang)</li>
         <li>Anything related to blockchain (I need to learn about it)</li>
-        <li>Some kind of IA to play the previous games that I build, Snake or Tetris, maybe a Neural Network (I got to learn about it)</li>
+        <li>Some kind of IA to play the previous games that I build, Snake or Tetris, maybe a Neural Network (I need to learn about it)</li>
       </ul>
     </MsgBox>
   );
